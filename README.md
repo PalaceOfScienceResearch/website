@@ -20,6 +20,8 @@ Sajt **Laboratorije za primenu veštačke inteligencije** Palate Nauke. To je st
 
 ## Objavljivanje na GitHub Pages
 
+> 📘 Detaljno uputstvo korak po korak, uz rešavanje problema: **[MANUAL.md](MANUAL.md)**
+
 1. Pošaljite izmene na `main` granu (`git push`).
 2. Na GitHub-u otvorite **Settings → Pages**.
 3. Pod **Build and deployment** izaberite **Source: Deploy from a branch**, granu **`main`** i folder **`/ (root)`**, pa kliknite **Save**.
