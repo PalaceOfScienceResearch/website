@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<!-- NAPOMENA: publikacije su primer — zamenite ih pravim radovima.
+     Novi rad: kopirajte jedan <li class="pub">…</li> blok, postavite data-type
+     (journal | conference | preprint | thesis) i dajte BibTeX bloku jedinstven id. -->
+<html lang="sr-Latn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Publikacije · Palata Nauke AI Lab</title>
+  <meta name="description" content="Naučni radovi Laboratorije za primenu veštačke inteligencije Palate Nauke.">
+  <meta property="og:title" content="Publikacije · Palata Nauke AI Lab">
+  <meta property="og:description" content="Radovi iz računarskog vida, obrade prirodnog jezika, AI u medicini i odgovorne AI.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#05070f">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script>
+    (function () {
+      var d = document.documentElement, t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      d.setAttribute('data-theme', t === 'light' ? 'light' : 'dark');
+      d.classList.add('js');
+    })();
+  </script>
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Preskoči na sadržaj</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <svg class="brand-logo" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id="logo-grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+              <stop offset="0" stop-color="#22d3ee"/>
+              <stop offset="0.55" stop-color="#818cf8"/>
+              <stop offset="1" stop-color="#e879f9"/>
+            </linearGradient>
+          </defs>
+          <path d="M16 2.5 27.7 9.25v13.5L16 29.5 4.3 22.75V9.25Z" fill="none" stroke="url(#logo-grad)" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M16 16V9M16 16l6.1 3.5M16 16l-6.1 3.5" stroke="url(#logo-grad)" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="16" cy="9" r="2" fill="#22d3ee"/>
+          <circle cx="22.1" cy="19.5" r="2" fill="#e879f9"/>
+          <circle cx="9.9" cy="19.5" r="2" fill="#818cf8"/>
+          <circle cx="16" cy="16" r="2.6" fill="currentColor"/>
+        </svg>
+        <span class="brand-text"><strong>Palata Nauke</strong><small>AI Lab</small></span>
+      </a>
+
+      <nav class="site-nav" id="site-nav" aria-label="Glavna navigacija">
+        <ul>
+          <li><a href="index.html">Početna</a></li>
+          <li><a href="istrazivanje.html">Istraživanje</a></li>
+          <li><a href="tim.html">Tim</a></li>
+          <li><a href="publikacije.html" aria-current="page">Publikacije</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a class="icon-btn gh-link" href="https://github.com/PalaceOfScienceResearch" aria-label="Laboratorija na GitHub-u" title="GitHub">
+          <svg class="icon" viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></svg>
+        </a>
+        <button class="icon-btn theme-toggle" type="button" aria-label="Promeni svetlu ili tamnu temu" title="Promeni temu">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="icon-btn nav-toggle" type="button" aria-label="Otvori meni" aria-expanded="false" aria-controls="site-nav">
+          <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Putanja">
+          <ol>
+            <li><a href="index.html">Početna</a></li>
+            <li aria-current="page">Publikacije</li>
+          </ol>
+        </nav>
+        <span class="kicker">Radovi</span>
+        <h1>Naučne <span class="gradient-text">publikacije</span></h1>
+        <p class="lead">Radovi u časopisima, na konferencijama, preprinti i teze naših članova. Imena članova laboratorije istaknuta su podebljano.</p>
+      </div>
+    </section>
+
+    <section class="section" data-publications>
+      <div class="container">
+        <div class="pub-toolbar js-only">
+          <div class="search">
+            <label class="visually-hidden" for="pub-search">Pretraži publikacije</label>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input id="pub-search" type="search" placeholder="Pretraži po naslovu, autoru ili godini…" autocomplete="off" data-pub-search>
+          </div>
+          <div class="chips" role="group" aria-label="Filtriraj po tipu publikacije">
+            <button class="chip" type="button" data-pub-filter="all" aria-pressed="true">Sve <span class="chip-count"></span></button>
+            <button class="chip" type="button" data-pub-filter="journal" aria-pressed="false">Časopisi <span class="chip-count"></span></button>
+            <button class="chip" type="button" data-pub-filter="conference" aria-pressed="false">Konferencije <span class="chip-count"></span></button>
+            <button class="chip" type="button" data-pub-filter="preprint" aria-pressed="false">Preprinti <span class="chip-count"></span></button>
+            <button class="chip" type="button" data-pub-filter="thesis" aria-pressed="false">Teze <span class="chip-count"></span></button>
+          </div>
+          <p class="pub-count" aria-live="polite">Prikazano <strong data-pub-count>10</strong> / <span data-pub-total>10</span></p>
+        </div>
+
+        <!-- ===== 2026 ===== -->
+        <section class="pub-year" aria-labelledby="g2026">
+          <h2 id="g2026">2026</h2>
+          <ol class="pub-list">
+            <li class="pub" data-type="journal">
+              <span class="badge">Časopis</span>
+              <h3 class="pub-title">Vision Transformers for Early Detection in Medical Imaging</h3>
+              <p class="pub-authors"><strong>M. Petrović</strong>, <strong>J. Nikolić</strong>, <strong>S. Jovanović</strong>, K. Novak</p>
+              <p class="pub-venue"><em>Naziv časopisa</em>, vol. 18, br. 2, str. 101–118, 2026.</p>
+              <div class="pub-actions js-only">
+                <button class="btn btn-ghost btn-sm" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-1">BibTeX</button>
+                <!-- Primer dodatnih linkova:
+                <a class="btn btn-ghost btn-sm" href="https://doi.org/…">DOI</a>
+                <a class="btn btn-ghost btn-sm" href="https://github.com/PalaceOfScienceResearch/…">Kod</a> -->
+              </div>
+              <div class="bibtex" id="bib-1" hidden>
+                <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
+                <pre><code>@article{petrovic2026vit,
+  title   = {Vision Transformers for Early Detection in Medical Imaging},
+  author  = {Petrović, Marko and Nikolić, Jelena and Jovanović, Stefan and Novak, Katarina},
+  journal = {Naziv časopisa},
+  volume  = {18},
+  number  = {2},
+  pages   = {101--118},
+  year    = {2026}
+}</code></pre>
+              </div>
+            </li>
+            <li class="pub" data-type="conference">
+              <span class="badge badge-conference">Konferencija</span>
+              <h3 class="pub-title">Efficient Retrieval-Augmented Generation for Low-Resource Languages</h3>
+              <p class="pub-authors"><strong>A. Ilić</strong>, <strong>T. Pavlović</strong>, D. Horvat, <strong>M. Petrović</strong></p>
+              <p class="pub-venue"><em>Zbornik radova međunarodne konferencije</em>, 2026.</p>
+              <div class="pub-actions js-only">
+                <button class="btn btn-ghost btn-sm" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-2">BibTeX</button>
+              </div>
+              <div class="bibtex" id="bib-2" hidden>
+                <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
+                <pre><code>@inproceedings{ilic2026rag,
+  title     = {Efficient Retrieval-Augmented Generation for Low-Resource Languages},
+  author    = {Ilić, Ana and Pavlović, Teodora and Horvat, Dario and Petrović, Marko},
+  booktitle = {Zbornik radova međunarodne konferencije},
+  year      = {2026}
+}</code></pre>
+              </div>
+            </li>
+            <li class="pub" data-type="preprint">
+              <span class="badge badge-preprint">Preprint</span>
+              <h3 class="pub-title">A Benchmark for Evaluating Large Language Models in Serbian</h3>
+              <p class="pub-authors"><strong>T. Pavlović</strong>, <strong>L. Đorđević</strong>, <strong>M. Petrović</strong></p>
+              <p class="pub-venue"><em>arXiv preprint</em>, 2026.</p>
+              <div class="pub-actions js-only">
+                <button class="btn btn-ghost btn-sm" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-3">BibTeX</button>
+              </div>
+              <div class="bibtex" id="bib-3" hidden>
+                <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
+                <pre><code>@misc{pavlovic2026benchmark,
+  title  = {A Benchmark for Evaluating Large Language Models in Serbian},
+  author = {Pavlović, Teodora and Đorđević, Luka and Petrović, Marko},
+  note   = {arXiv preprint},
+  year   = {2026}
+}</code></pre>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <!-- ===== 2025 ===== -->
+        <section class="pub-year" aria-labelledby="g2025">
+          <h2 id="g2025">2025</h2>
+          <ol class="pub-list">
+            <li class="pub" data-type="journal">
+              <span class="badge">Časopis</span>
+              <h3 class="pub-title">Diffusion Models for Synthetic Data Generation in Precision Agriculture</h3>
+              <p class="pub-authors"><strong>S. Jovanović</strong>, <strong>M. Stojanović</strong>, <strong>M. Petrović</strong></p>
+              <p class="pub-venue"><em>Naziv časopisa</em>, vol. 11, br. 4, 2025.</p>
+              <div class="pub-actions js-only">
+                <button class="btn btn-ghost btn-sm" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-4">BibTeX</button>
+              </div>
+              <div class="bibtex" id="bib-4" hidden>
+                <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
+                <pre><code>@article{jovanovic2025diffusion,
+  title   = {Diffusion Models for Synthetic Data Generation in Precision Agriculture},
+  author  = {Jovanović, Stefan and Stojanović, Milica and Petrović, Marko},
+  journal = {Naziv časopisa},
+  volume  = {11},
+  number  = {4},
+  year    = {2025}
+}</code></pre>
+              </div>
+            </li>
+            <li class="pub" data-type="conference">
+              <span class="badge badge-conference">Konferencija</span>
+              <h3 class="pub-title">Explainable Deep Reinforcement Learning for Robotic Manipulation</h3>
+              <p class="pub-authors"><strong>N. Marković</strong>, <strong>L. Đorđević</strong>, P. Weber</p>
+              <p class="pub-venue"><em>Zbornik radova konferencije o robotici</em>, 2025.</p>
+              <div class="pub-actions js-only">
+                <button class="btn btn-ghost btn-sm" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-5">BibTeX</button>
+              </div>
+              <div class="bibtex" id="bib-5" hidden>
+                <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
+                <pre><code>@inproceedings{markovic2025xrl,
+  title     = {Explainable Deep Reinforcement Learning for Robotic Manipulation},
+  author    = {Marković, Nikola and Đorđević, Luka and Weber, Paul},
+  booktitle = {Zbornik radova konferencije o robotici},
+  year      = {2025}
+}</code></pre>
+              </div>
+            </li>
+            <li class="pub" data-type="thesis">
+              <span class="badge badge-thesis">Teza</span>
+              <h3 class="pub-title">Primena dubokog učenja u analizi medicinskih vremenskih serija</h3>
+              <p class="pub-authors"><strong>A. Ilić</strong></p>
+              <p class="pub-venue">Master rad, 2025.</p>
+              <div class="pub-actions js-only">
+                <button class="btn btn-ghost btn-sm" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-6">BibTeX</button>
+              </div>
+              <div class="bibtex" id="bib-6" hidden>
+                <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
+                <pre><code>@mastersthesis{ilic2025master,
+  title  = {Primena dubokog učenja u analizi medicinskih vremenskih serija},
+  author = {Ilić, Ana},
+  school = {Naziv fakulteta},
+  year   = {2025}
+}</code></pre>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <!-- ===== 2024 ===== -->
+        <section class="pub-year" aria-labelledby="g2024">
+          <h2 id="g2024">2024</h2>
+          <ol class="pub-list">
+            <li class="pub" data-type="journal">
+              <span class="badge">Časopis</span>
+              <h3 class="pub-title">Uncertainty-Aware Neural Networks for Clinical Decision Support</h3>
+              <p class="pub-authors"><strong>J. Nikolić</strong>, <strong>M. Petrović</strong></p>
+              <p class="pub-venue"><em>Naziv časopisa</em>, vol. 9, 2024.</p>
+              <div class="pub-actions js-only">
+                <button class="btn btn-ghost btn-sm" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-7">BibTeX</button>
+              </div>
+              <div class="bibtex" id="bib-7" hidden>
+                <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
+                <pre><code>@article{nikolic2024uncertainty,
+  title   = {Uncertainty-Aware Neural Networks for Clinical Decision Support},
+  author  = {Nikolić, Jelena and Petrović, Marko},
+  journal = {Naziv časopisa},
+  volume  = {9},
+  year    = {2024}
+}</code></pre>
+              </div>
+            </li>
+            <li class="pub" data-type="conference">
+              <span class="badge badge-conference">Konferencija</span>
+              <h3 class="pub-title">Lightweight Object Detection on Edge Devices for Field Robotics</h3>
+              <p class="pub-authors"><strong>M. Stojanović</strong>, <strong>N. Marković</strong>, <strong>S. Jovanović</strong></p>
+              <p class="pub-venue"><em>Zbornik radova konferencije</em>, 2024.</p>
+              <div class="pub-actions js-only">
+                <button class="btn btn-ghost btn-sm" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-8">BibTeX</button>
+              </div>
+              <div class="bibtex" id="bib-8" hidden>
+                <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
+                <pre><code>@inproceedings{stojanovic2024edge,
+  title     = {Lightweight Object Detection on Edge Devices for Field Robotics},
+  author    = {Stojanović, Milica and Marković, Nikola and Jovanović, Stefan},
+  booktitle = {Zbornik radova konferencije},
+  year      = {2024}
+}</code></pre>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <!-- ===== 2023 ===== -->
+        <section class="pub-year" aria-labelledby="g2023">
+          <h2 id="g2023">2023</h2>
+          <ol class="pub-list">
+            <li class="pub" data-type="thesis">
+              <span class="badge badge-thesis">Teza</span>
+              <h3 class="pub-title">Objašnjivi modeli mašinskog učenja za donošenje odluka u kritičnim sistemima</h3>
+              <p class="pub-authors"><strong>I. Kostić</strong></p>
+              <p class="pub-venue">Doktorska disertacija, 2023.</p>
+              <div class="pub-actions js-only">
+                <button class="btn btn-ghost btn-sm" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-9">BibTeX</button>
+              </div>
+              <div class="bibtex" id="bib-9" hidden>
+                <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
+                <pre><code>@phdthesis{kostic2023xai,
+  title  = {Objašnjivi modeli mašinskog učenja za donošenje odluka u kritičnim sistemima},
+  author = {Kostić, Ivana},
+  school = {Naziv fakulteta},
+  year   = {2023}
+}</code></pre>
+              </div>
+            </li>
+            <li class="pub" data-type="journal">
+              <span class="badge">Časopis</span>
+              <h3 class="pub-title">Fairness Constraints in Deep Learning Models for High-Stakes Decisions</h3>
+              <p class="pub-authors"><strong>M. Petrović</strong>, <strong>I. Kostić</strong>, R. Fischer</p>
+              <p class="pub-venue"><em>Naziv časopisa</em>, vol. 7, 2023.</p>
+              <div class="pub-actions js-only">
+                <button class="btn btn-ghost btn-sm" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-10">BibTeX</button>
+              </div>
+              <div class="bibtex" id="bib-10" hidden>
+                <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
+                <pre><code>@article{petrovic2023fairness,
+  title   = {Fairness Constraints in Deep Learning Models for High-Stakes Decisions},
+  author  = {Petrović, Marko and Kostić, Ivana and Fischer, Ralf},
+  journal = {Naziv časopisa},
+  volume  = {7},
+  year    = {2023}
+}</code></pre>
+              </div>
+            </li>
+          </ol>
+        </section>
+
+        <p class="pub-empty" data-pub-empty hidden>Nijedna publikacija ne odgovara pretrazi. Pokušajte sa drugim pojmom ili filterom.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="index.html">
+          <svg class="brand-logo" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="logo-grad-f" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                <stop offset="0" stop-color="#22d3ee"/>
+                <stop offset="0.55" stop-color="#818cf8"/>
+                <stop offset="1" stop-color="#e879f9"/>
+              </linearGradient>
+            </defs>
+            <path d="M16 2.5 27.7 9.25v13.5L16 29.5 4.3 22.75V9.25Z" fill="none" stroke="url(#logo-grad-f)" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M16 16V9M16 16l6.1 3.5M16 16l-6.1 3.5" stroke="url(#logo-grad-f)" stroke-width="1.6" stroke-linecap="round"/>
+            <circle cx="16" cy="9" r="2" fill="#22d3ee"/>
+            <circle cx="22.1" cy="19.5" r="2" fill="#e879f9"/>
+            <circle cx="9.9" cy="19.5" r="2" fill="#818cf8"/>
+            <circle cx="16" cy="16" r="2.6" fill="currentColor"/>
+          </svg>
+          <span class="brand-text"><strong>Palata Nauke</strong><small>AI Lab</small></span>
+        </a>
+        <p>Laboratorija za primenu veštačke inteligencije. Istražujemo, gradimo i otvoreno delimo ono što napravimo.</p>
+      </div>
+      <div>
+        <h2>Laboratorija</h2>
+        <ul>
+          <li><a href="istrazivanje.html">Istraživanje</a></li>
+          <li><a href="tim.html">Tim</a></li>
+          <li><a href="publikacije.html">Publikacije</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Otvoreni kod</h2>
+        <ul>
+          <li><a href="https://github.com/PalaceOfScienceResearch">GitHub organizacija</a></li>
+          <li><a href="istrazivanje.html#kod">Naši repozitorijumi</a></li>
+          <li><a href="https://github.com/PalaceOfScienceResearch/demo-repository">Izvorni kod sajta</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Kontakt</h2>
+        <ul>
+          <li><a href="mailto:kontakt@example.com">kontakt@example.com</a></li>
+          <li><a href="kontakt.html#pozicije">Otvorene pozicije</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span data-current-year>2026</span> Palata Nauke · AI Lab</p>
+      <p><span class="live-dot"></span> Svi sistemi rade · Hostovano na <a href="https://pages.github.com/">GitHub Pages</a></p>
+    </div>
+  </footer>
+</body>
+</html>
