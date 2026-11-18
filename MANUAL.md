@@ -38,7 +38,7 @@ Otvorite terminal (PowerShell ili Git Bash) i pokrenite:
 ```bash
 cd C:\Users\mdodovic\Desktop\PalataNauke
 git add .
-git commit -m "Sajt laboratorije Palata Nauke AI Lab"
+git commit -m "Sajt laboratorije Palata Nauke · Laboratorija za primenjenu veštačku inteligenciju"
 git push
 ```
 
@@ -111,10 +111,10 @@ git push
 
 Deo sadržaja je još uvek **primer**. Pre deljenja sajta zamenite ga pravim podacima:
 
-- [ ] **`tim.html`**: izmišljeni članovi tima. Upišite prava imena, uloge, kratke biografije i email-ove.
+- [x] **`tim.html`**: za sada samo rukovodilac, prof. dr Boško Nikolić. Novi članovi se dodaju po uputstvu iz README.md.
 - [ ] **Email `kontakt@example.com`**: nalazi se u podnožju **svih 5 stranica** i na `kontakt.html`. U VS Code-u: **Ctrl + Shift + H**, tražite `example.com` i zamenite svuda.
-- [ ] **`kontakt.html`**: prava adresa (sada piše *„Ulica i broj“*).
-- [ ] **`index.html`**: vesti u sekciji *Šta je novo* i brojka *„9 članova tima“*.
+- [x] **`kontakt.html`**: adresa je Palata nauke, Kralja Milana 11, Beograd.
+- [ ] **`index.html`**: vesti u sekciji *Šta je novo* i brojke u hero delu (projekti, radovi).
 - [ ] **`istrazivanje.html`**: projekti u sekciji *Na čemu radimo*.
 - [x] **`publikacije.html`**: radovi su pravi (preuzeti iz Crossref/OpenAlex baza).
 

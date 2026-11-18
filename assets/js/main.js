@@ -1,5 +1,5 @@
 /* =========================================================================
-   Palata Nauke · AI Lab — interakcije i animacije
+   Palata Nauke · Laboratorija za primenjenu veštačku inteligenciju — interakcije i animacije
    Bez spoljnih biblioteka. Sve animacije poštuju "prefers-reduced-motion".
    ========================================================================= */
 (function () {
@@ -281,6 +281,7 @@
 
     var rotY = 0.6, mx = 0, my = 0, ex = 0, ey = 0, boost = 0, time = 0;
     var pointer = { x: -9999, y: -9999 };
+    var hover = 0, hoverTarget = 0, hoverSpawn = 0, near = [];
     var cY = 1, sY = 0, cX = 1, sX = 0;
     var C = null, light = false, sprite = {};
     var running = false, raf = 0, last = 0;
@@ -531,6 +532,28 @@
         p = pts[i];
         proj(p.x * breathe, p.y * breathe, p.z * breathe, p);
       }
+
+      // hover: neuroni blizu kursora se razmiču (efekat sočiva) i svetle
+      near.length = 0;
+      if (hover > 0.01) {
+        var HR = R * 0.62, HR2 = HR * HR;
+        for (i = 0; i < pts.length; i++) {
+          p = pts[i];
+          if (p.sz > 0.15) continue;
+          var hx = p.sx - pointer.x, hy = p.sy - pointer.y, h2 = hx * hx + hy * hy;
+          if (h2 >= HR2) continue;
+          var hd = Math.sqrt(h2) || 1;
+          var f = 1 - hd / HR;
+          var push = f * f * R * 0.16 * hover;
+          p.sx += (hx / hd) * push;
+          p.sy += (hy / hd) * push;
+          if (p.flash < f * 0.55 * hover) p.flash = f * 0.55 * hover;
+          near.push([h2, i]);
+        }
+        near.sort(function (m1, m2) { return m1[0] - m2[0]; });
+        if (near.length > 7) near.length = 7;
+      }
+
       for (bi = 0; bi < BUCKETS; bi++) { edgeBuckets[bi].length = 0; ptBuckets[bi].length = 0; }
       for (i = 0; i < edges.length; i++) {
         e = edges[i];
@@ -550,6 +573,26 @@
           ctx.lineTo(q.sx, q.sy);
         }
         ctx.stroke();
+      }
+
+      // hover: "sinapse" od kursora do najbližih neurona
+      if (near.length) {
+        ctx.lineWidth = 1.1;
+        for (k = 0; k < near.length; k++) {
+          p = pts[near[k][1]];
+          var fa = (1 - Math.sqrt(near[k][0]) / (R * 0.62)) * hover;
+          ctx.strokeStyle = rgba(k % 3 === 2 ? C.c : C.a, 0.15 + fa * 0.6);
+          ctx.beginPath(); ctx.moveTo(pointer.x, pointer.y); ctx.lineTo(p.sx, p.sy); ctx.stroke();
+        }
+        var cs2 = (26 + Math.sin(time * 0.12) * 4) * (R / 160) * hover;
+        ctx.globalAlpha = 0.9 * hover;
+        ctx.drawImage(sprite.a, pointer.x - cs2 / 2, pointer.y - cs2 / 2, cs2, cs2);
+        ctx.globalAlpha = 1;
+        hoverSpawn -= dt;
+        if (hoverSpawn <= 0 && pulses.length < 70) {
+          pulses.push(newPulse(near[0][1], 2 + ((Math.random() * 3) | 0)));
+          hoverSpawn = 9;
+        }
       }
 
       // impulsi koji putuju po sinapsama
@@ -669,13 +712,15 @@
       ex += (mx - ex) * 0.05 * dt;
       ey += (my - ey) * 0.05 * dt;
       boost *= Math.pow(0.965, dt);
-      rotY += (0.0035 + boost * 0.05) * dt;
+      hover += (hoverTarget - hover) * 0.08 * dt;
+      // uz "smanjeno kretanje" jezgro se ne vrti samo, već samo reaguje na korisnika
+      rotY += ((reduceMotion ? 0 : 0.0035) + boost * 0.05 + hover * 0.004) * dt;
       draw(dt);
       if (running) raf = requestAnimationFrame(frame);
     }
 
     function start() {
-      if (running || reduceMotion) return;
+      if (running || (reduceMotion && !interactive)) return;
       running = true;
       last = 0;
       raf = requestAnimationFrame(frame);
@@ -686,6 +731,23 @@
       raf = 0;
     }
     var heroVisible = true;
+    var interactive = false, idleTimer = 0;
+    // uz "smanjeno kretanje" animacija radi samo dok korisnik pomera miš preko hero dela
+    function wake() {
+      if (!reduceMotion) return;
+      clearTimeout(idleTimer);
+      if (!interactive) { interactive = true; sync(); }
+    }
+    function sleepSoon() {
+      if (!reduceMotion) return;
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(function () {
+        interactive = false;
+        stop();
+        hover = hoverTarget = 0; ex = ey = 0; boost = 0;
+        drawStill();
+      }, 1500);
+    }
     function sync() {
       if (heroVisible && !document.hidden) start(); else stop();
     }
@@ -696,15 +758,22 @@
       var cr = canvas.getBoundingClientRect();
       pointer.x = e.clientX - cr.left;
       pointer.y = e.clientY - cr.top;
-      mx = Math.max(-1, Math.min(1, (pointer.x - CX) / (W / 2)));
-      my = Math.max(-1, Math.min(1, (pointer.y - CY) / (H / 2)));
+      // nagib se računa u odnosu na veličinu jezgra, pa reaguje i kad je miš iznad njega
+      var dx = pointer.x - CX, dy = pointer.y - CY;
+      mx = Math.max(-1, Math.min(1, dx / (R * 2)));
+      my = Math.max(-1, Math.min(1, dy / (R * 2)));
+      hoverTarget = (dx * dx + dy * dy < R * R * 2.9) ? 1 : 0;
+      wake();
     }, { passive: true });
     hero.addEventListener('pointerleave', function () {
       pointer.x = pointer.y = -9999;
       mx = my = 0;
+      hoverTarget = 0;
+      sleepSoon();
     });
     hero.addEventListener('pointerdown', function (e) {
-      if (reduceMotion || (e.target.closest && e.target.closest('a, button, input'))) return;
+      if (e.target.closest && e.target.closest('a, button, input')) return;
+      wake();
       var cr = canvas.getBoundingClientRect();
       var x = e.clientX - cr.left;
       var y = e.clientY - cr.top;

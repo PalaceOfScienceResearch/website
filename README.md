@@ -1,6 +1,6 @@
-# Palata Nauke · AI Lab
+# Palata Nauke · Laboratorija za primenjenu veštačku inteligenciju
 
-Sajt **Laboratorije za primenu veštačke inteligencije** Palate Nauke. To je statički sajt (HTML, CSS i malo JavaScript-a) spreman za **GitHub Pages**: nema build koraka, nema zavisnosti i nema spoljnih biblioteka.
+Sajt **Laboratorije za primenjenu veštačku inteligenciju** Palate Nauke. To je statički sajt (HTML, CSS i malo JavaScript-a) spreman za **GitHub Pages**: nema build koraka, nema zavisnosti i nema spoljnih biblioteka.
 
 > ⚠️ **Sav sadržaj je primer.** Imena, publikacije, projekti, vesti, brojke, adresa i email-ovi su izmišljeni i služe kao šablon. Zamenite ih pravim podacima pre objavljivanja.
 
