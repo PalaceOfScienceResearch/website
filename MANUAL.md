@@ -132,9 +132,8 @@ Ako repozitorijum preimenujete u **`palaceofscienceresearch.github.io`**, sajt �
    ```bash
    git remote set-url origin https://github.com/PalaceOfScienceResearch/palaceofscienceresearch.github.io.git
    ```
-3. U HTML fajlovima zamenite `demo-repository` novim imenom. Pominje se u linku *„Izvorni kod sajta“* u podnožju i u linku za issue na `kontakt.html`. GitHub preusmerava stare linkove, ali je bolje da budu tačni.
 
-Svi ostali linkovi na sajtu su relativni, pa radi na obe adrese bez izmena.
+Svi linkovi na sajtu su relativni, pa sajt radi na obe adrese bez izmena.
 
 ### Sopstveni domen (npr. `ailab.vasdomen.rs`)
 
@@ -157,4 +156,3 @@ Svi ostali linkovi na sajtu su relativni, pa radi na obe adrese bez izmena.
 | Sajt je bez stilova i animacija | Folder `assets/` nije poslat. Pokrenite `git status`; ako je `assets/` neoznačen, uradite `git add assets` i ponovo commit i push. |
 | Promene se ne vide | Sačekajte da se posao u *Actions* završi, pa osvežite sa **Ctrl + F5**. |
 | **Proof HTML** je crven ❌ | Otvorite *Actions → Proof HTML* i u logu pogledajte koji link ne radi. Ispravite ga, ili ga dodajte u `url_ignore_re` u `.github/workflows/proof-html.yml` (tako su već isključeni `doi.org` linkovi). |
-| Na stranici *Istraživanje* nema repozitorijuma | Organizacija nema javnih repozitorijuma, ili je posetilac prešao GitHub limit (60 zahteva na sat). Sajt tada prikazuje poruku sa linkom ka GitHub-u. To je očekivano ponašanje. |

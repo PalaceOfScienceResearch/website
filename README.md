@@ -2,15 +2,15 @@
 
 Sajt **Laboratorije za primenjenu veštačku inteligenciju** Palate Nauke. To je statički sajt (HTML, CSS i malo JavaScript-a) spreman za **GitHub Pages**: nema build koraka, nema zavisnosti i nema spoljnih biblioteka.
 
-> ⚠️ **Sav sadržaj je primer.** Imena, publikacije, projekti, vesti, brojke, adresa i email-ovi su izmišljeni i služe kao šablon. Zamenite ih pravim podacima pre objavljivanja.
+> ⚠️ **Deo sadržaja je još primer:** vesti, projekti, brojke na početnoj i email `kontakt@example.com`. Zamenite ih pravim podacima pre objavljivanja. Tim, adresa i publikacije su pravi.
 
 ## Stranice
 
 | Fajl | Sadržaj |
 | --- | --- |
 | `index.html` | Početna: 3D neuronsko jezgro, oblasti, način rada, vesti, izdvojeni radovi |
-| `istrazivanje.html` | Oblasti istraživanja, projekti i GitHub repozitorijumi (učitavaju se automatski) |
-| `tim.html` | Rukovodstvo, istraživači, doktorandi, studenti, alumni |
+| `istrazivanje.html` | Oblasti istraživanja i projekti |
+| `tim.html` | Rukovodilac laboratorije (novi članovi se dodaju po uputstvu ispod) |
 | `publikacije.html` | Radovi sa pretragom, filterima po tipu i BibTeX-om |
 | `kontakt.html` | Kontakt, otvorene pozicije i proces prijave |
 | `assets/css/style.css` | Svi stilovi; boje su promenljive na vrhu fajla |
@@ -41,20 +41,19 @@ python -m http.server 8000
 
 ## Kako se menja sadržaj
 
-- **Član tima** (`tim.html`): kopirajte jedan blok `<article class="card card-hover member">`. Inicijale upišite u `<span>` unutar `.avatar`, a boju prstena podesite preko `style="--hue: 200"` (0–360). Za fotografiju zamenite inicijale sa `<img src="assets/img/ime.jpg" alt="Ime Prezime">`.
+- **Član tima** (`tim.html`): ispod grupe *Rukovodstvo* dodajte novu grupu (`<div class="team-group">` sa naslovom), a u nju `<div class="team-grid">` sa karticama `<article class="card card-hover member reveal">` (unutra: `.avatar`, `<h3>` ime, `<p class="role">`, `<p class="bio">`, `.tags`). Stilovi za ove kartice već postoje u `style.css`. Inicijale upišite u `<span>` unutar `.avatar`, a boju prstena podesite preko `style="--hue: 200"` (0–360). Za fotografiju zamenite inicijale sa `<img src="assets/img/ime.jpg" alt="Ime Prezime">`.
 - **Publikacija** (`publikacije.html`, „Signali iz laboratorije“): radovi od 2024. su preuzeti iz Crossref/OpenAlex baza. Za novi rad kopirajte jedan `<li class="pub">` blok. U `data-type` upišite tip (`casopis` ili `konferencija`) i teme odvojene razmakom (`nlp`, `vid`, `medicina`, `obrazovanje`, `bezbednost`). BibTeX bloku dajte jedinstven `id` (i isti `aria-controls` na dugmetu). Brojači u filterima se računaju sami.
 - **Vesti** (`index.html`, sekcija `#vesti`): kopirajte jedan `<li class="news-item">`.
 - **Projekti** (`istrazivanje.html`, sekcija `#projekti`): kopirajte jednu karticu `project`. Za status koristite `status-active` ili `status-done`.
-- **Repozitorijumi**: učitavaju se sami preko GitHub API-ja za organizaciju iz atributa `data-github-repos`. Prikazuje se do 6 javnih repozitorijuma koji nisu forkovi ni arhivirani.
 - **Reči koje se smenjuju u naslovu**: atribut `data-scramble="budućnost|medicinu|nauku|…"` u `index.html`.
 - **Boje**: promenljive `--c-cyan`, `--c-violet` itd. na vrhu `style.css`, posebno za tamnu (`:root`) i svetlu (`[data-theme="light"]`) temu. Animacija jezgra automatski preuzima iste boje.
 - **Zaglavlje i podnožje** ponavljaju se na svih 5 stranica, pa izmenu navigacije uradite na svakoj.
 
 ## Animacije
 
-- **3D neuronsko jezgro** (canvas): rotirajuća mreža neurona po kojoj putuju impulsi, sa orbitama i HUD radarom. Prati miš, a klik pokreće udarni talas i rafal impulsa. Pauzira se kada nije na ekranu.
+- **3D neuronsko jezgro** (canvas): rotirajuća mreža neurona po kojoj putuju impulsi, sa orbitama i HUD radarom. Neuroni oko kursora zasvetle i povežu se sa njim, jezgro se naginje za mišem, a klik pokreće udarni talas i rafal impulsa. Pauzira se kada nije na ekranu.
 - Naslov koji se „dekodira“, brojači, terminal koji sam kuca, klizna traka sa pojmovima, svetlo koje prati kursor i okviri kartica koji zasvetle ispod kursora.
-- Ako korisnik u sistemu ima uključeno **„smanji pokrete“** (`prefers-reduced-motion`), animacije se gase i sve se prikazuje statično.
+- Ako korisnik u sistemu ima uključeno **„smanji pokrete“** (`prefers-reduced-motion`), animacije se gase. Jezgro tada stoji i pokreće se samo dok korisnik pomera miš preko njega ili klikne.
 - Bez JavaScript-a sajt i dalje radi: sav sadržaj je vidljiv i čitljiv.
 
 ## GitHub Actions
