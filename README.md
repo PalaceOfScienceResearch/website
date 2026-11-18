@@ -40,7 +40,7 @@ python -m http.server 8000
 ## Kako se menja sadržaj
 
 - **Član tima** (`tim.html`): kopirajte jedan blok `<article class="card card-hover member">`. Inicijale upišite u `<span>` unutar `.avatar`, a boju prstena podesite preko `style="--hue: 200"` (0–360). Za fotografiju zamenite inicijale sa `<img src="assets/img/ime.jpg" alt="Ime Prezime">`.
-- **Publikacija** (`publikacije.html`): kopirajte jedan `<li class="pub">` blok. Postavite `data-type` na `journal`, `conference`, `preprint` ili `thesis`, a BibTeX bloku dajte jedinstven `id` (i isti `aria-controls` na dugmetu). Brojači u filterima se računaju sami.
+- **Publikacija** (`publikacije.html`, „Signali iz laboratorije“): radovi od 2024. su preuzeti iz Crossref/OpenAlex baza. Za novi rad kopirajte jedan `<li class="pub">` blok. U `data-type` upišite tip (`casopis` ili `konferencija`) i teme odvojene razmakom (`nlp`, `vid`, `medicina`, `obrazovanje`, `bezbednost`). BibTeX bloku dajte jedinstven `id` (i isti `aria-controls` na dugmetu). Brojači u filterima se računaju sami.
 - **Vesti** (`index.html`, sekcija `#vesti`): kopirajte jedan `<li class="news-item">`.
 - **Projekti** (`istrazivanje.html`, sekcija `#projekti`): kopirajte jednu karticu `project`. Za status koristite `status-active` ili `status-done`.
 - **Repozitorijumi**: učitavaju se sami preko GitHub API-ja za organizaciju iz atributa `data-github-repos`. Prikazuje se do 6 javnih repozitorijuma koji nisu forkovi ni arhivirani.

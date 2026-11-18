@@ -9,3 +9,7 @@ jobs:
       - uses: anishathalye/proof-html@v1.1.0
         with:
           directory: ./
+          # DOI linkovi vode na sajtove izdavača (IEEE, Wiley, SPIE...) koji često
+          # blokiraju automatske provere, pa ih preskačemo da provera ne bi pala.
+          url_ignore_re: |
+            ^https://doi\.org/

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<!-- NAPOMENA: publikacije su primer — zamenite ih pravim radovima.
-     Novi rad: kopirajte jedan <li class="pub">…</li> blok, postavite data-type
-     (journal | conference | preprint | thesis) i dajte BibTeX bloku jedinstven id. -->
+<!-- Radovi su preuzeti iz Crossref/OpenAlex baza (DOI metapodaci), od 2024. naviše.
+     Novi rad: kopirajte jedan <li class="pub">…</li> blok. U data-type upišite tip
+     (casopis | konferencija) i teme odvojene razmakom (nlp, vid, medicina,
+     obrazovanje, bezbednost). BibTeX bloku dajte jedinstven id (isti i u aria-controls). -->
 <html lang="sr-Latn">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Publikacije · Palata Nauke AI Lab</title>
-  <meta name="description" content="Naučni radovi Laboratorije za primenu veštačke inteligencije Palate Nauke.">
-  <meta property="og:title" content="Publikacije · Palata Nauke AI Lab">
-  <meta property="og:description" content="Radovi iz računarskog vida, obrade prirodnog jezika, AI u medicini i odgovorne AI.">
+  <title>Signali iz laboratorije · Publikacije · Palata Nauke AI Lab</title>
+  <meta name="description" content="Najnoviji radovi Laboratorije za primenu veštačke inteligencije Palate Nauke: časopisi i konferencije od 2024. godine.">
+  <meta property="og:title" content="Signali iz laboratorije · Palata Nauke AI Lab">
+  <meta property="og:description" content="Jezički modeli, računarski vid, AI u medicini, obrazovanju i bezbednosti: radovi od 2024. godine.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#05070f">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
@@ -82,9 +83,9 @@
             <li aria-current="page">Publikacije</li>
           </ol>
         </nav>
-        <span class="kicker">Radovi</span>
-        <h1>Naučne <span class="gradient-text">publikacije</span></h1>
-        <p class="lead">Radovi u časopisima, na konferencijama, preprinti i teze naših članova. Imena članova laboratorije istaknuta su podebljano.</p>
+        <span class="kicker">Publikacije · 2024 — 2026</span>
+        <h1>Signali iz <span class="gradient-text">laboratorije</span></h1>
+        <p class="lead">Šta smo istražili, istrenirali i objavili. Izbor najnovijih radova iz časopisa i sa konferencija; članovi laboratorije su istaknuti podebljano.</p>
       </div>
     </section>
 
@@ -94,79 +95,158 @@
           <div class="search">
             <label class="visually-hidden" for="pub-search">Pretraži publikacije</label>
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-            <input id="pub-search" type="search" placeholder="Pretraži po naslovu, autoru ili godini…" autocomplete="off" data-pub-search>
+            <input id="pub-search" type="search" placeholder="Pretraži radove, autore…" autocomplete="off" data-pub-search>
           </div>
-          <div class="chips" role="group" aria-label="Filtriraj po tipu publikacije">
-            <button class="chip" type="button" data-pub-filter="all" aria-pressed="true">Sve <span class="chip-count"></span></button>
-            <button class="chip" type="button" data-pub-filter="journal" aria-pressed="false">Časopisi <span class="chip-count"></span></button>
-            <button class="chip" type="button" data-pub-filter="conference" aria-pressed="false">Konferencije <span class="chip-count"></span></button>
-            <button class="chip" type="button" data-pub-filter="preprint" aria-pressed="false">Preprinti <span class="chip-count"></span></button>
-            <button class="chip" type="button" data-pub-filter="thesis" aria-pressed="false">Teze <span class="chip-count"></span></button>
+          <div class="chips" role="group" aria-label="Filtriraj po tipu ili temi">
+            <button class="chip" type="button" data-pub-filter="all" aria-pressed="true">Svi <span class="chip-count"></span></button>
+            <button class="chip" type="button" data-pub-filter="casopis" aria-pressed="false">Časopisi <span class="chip-count"></span></button>
+            <button class="chip" type="button" data-pub-filter="konferencija" aria-pressed="false">Konferencije <span class="chip-count"></span></button>
+            <button class="chip" type="button" data-pub-filter="nlp" aria-pressed="false">Jezički modeli <span class="chip-count"></span></button>
+            <button class="chip" type="button" data-pub-filter="vid" aria-pressed="false">Računarski vid <span class="chip-count"></span></button>
+            <button class="chip" type="button" data-pub-filter="medicina" aria-pressed="false">Medicina <span class="chip-count"></span></button>
+            <button class="chip" type="button" data-pub-filter="obrazovanje" aria-pressed="false">Obrazovanje <span class="chip-count"></span></button>
+            <button class="chip" type="button" data-pub-filter="bezbednost" aria-pressed="false">Bezbednost <span class="chip-count"></span></button>
           </div>
-          <p class="pub-count" aria-live="polite">Prikazano <strong data-pub-count>10</strong> / <span data-pub-total>10</span></p>
+          <p class="pub-count" aria-live="polite">Prikazano <strong data-pub-count>9</strong> / <span data-pub-total>9</span></p>
         </div>
 
         <!-- ===== 2026 ===== -->
         <section class="pub-year" aria-labelledby="g2026">
           <h2 id="g2026">2026</h2>
           <ol class="pub-list">
-            <li class="pub" data-type="journal">
-              <span class="badge">Časopis</span>
-              <h3 class="pub-title">Vision Transformers for Early Detection in Medical Imaging</h3>
-              <p class="pub-authors"><strong>M. Petrović</strong>, <strong>J. Nikolić</strong>, <strong>S. Jovanović</strong>, K. Novak</p>
-              <p class="pub-venue"><em>Naziv časopisa</em>, vol. 18, br. 2, str. 101–118, 2026.</p>
-              <div class="pub-actions js-only">
-                <button class="btn btn-ghost btn-sm" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-1">BibTeX</button>
-                <!-- Primer dodatnih linkova:
-                <a class="btn btn-ghost btn-sm" href="https://doi.org/…">DOI</a>
-                <a class="btn btn-ghost btn-sm" href="https://github.com/PalaceOfScienceResearch/…">Kod</a> -->
+            <li class="pub" data-type="casopis vid">
+              <div class="pub-badges"><span class="badge badge-outline">Časopis</span><span class="badge">Računarski vid</span></div>
+              <h3 class="pub-title">YOLO-OCR vs. Vision–Language Models Under Limited Data Availability: A Car-Plate Recognition Case Study</h3>
+              <p class="pub-authors"><strong>J. Tufegdžić</strong>, <strong>M. Dodović</strong>, A. Ivković, V. Jocović, <strong>M. Cvetanović</strong></p>
+              <p class="pub-venue"><em>Electronics</em>, vol. 15, br. 18, art. 4242, 2026.</p>
+              <div class="pub-actions">
+                <a class="btn btn-ghost btn-sm" href="https://doi.org/10.3390/electronics15184242">DOI ↗</a>
+                <button class="btn btn-ghost btn-sm js-only" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-1">BibTeX</button>
               </div>
               <div class="bibtex" id="bib-1" hidden>
                 <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
-                <pre><code>@article{petrovic2026vit,
-  title   = {Vision Transformers for Early Detection in Medical Imaging},
-  author  = {Petrović, Marko and Nikolić, Jelena and Jovanović, Stefan and Novak, Katarina},
-  journal = {Naziv časopisa},
-  volume  = {18},
-  number  = {2},
-  pages   = {101--118},
-  year    = {2026}
+                <pre><code>@article{tufegdzic2026yolo,
+  title   = {{YOLO-OCR} vs. Vision--Language Models Under Limited Data Availability: A Car-Plate Recognition Case Study},
+  author  = {Tufegdžić, Janko and Dodović, Matija and Ivković, Ana and Jocović, Vladimir and Cvetanović, Miloš},
+  journal = {Electronics},
+  volume  = {15},
+  number  = {18},
+  pages   = {4242},
+  year    = {2026},
+  doi     = {10.3390/electronics15184242}
 }</code></pre>
               </div>
             </li>
-            <li class="pub" data-type="conference">
-              <span class="badge badge-conference">Konferencija</span>
-              <h3 class="pub-title">Efficient Retrieval-Augmented Generation for Low-Resource Languages</h3>
-              <p class="pub-authors"><strong>A. Ilić</strong>, <strong>T. Pavlović</strong>, D. Horvat, <strong>M. Petrović</strong></p>
-              <p class="pub-venue"><em>Zbornik radova međunarodne konferencije</em>, 2026.</p>
-              <div class="pub-actions js-only">
-                <button class="btn btn-ghost btn-sm" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-2">BibTeX</button>
+            <li class="pub" data-type="casopis obrazovanje">
+              <div class="pub-badges"><span class="badge badge-outline">Časopis</span><span class="badge amber">Obrazovanje</span></div>
+              <h3 class="pub-title">A Game-Based Learning Approach to Artificial Intelligence Topics</h3>
+              <p class="pub-authors">A. Milaković, V. Jocović, <strong>D. Drašković</strong>, <strong>B. Nikolić</strong></p>
+              <p class="pub-venue"><em>Computer Applications in Engineering Education</em>, vol. 34, br. 4, art. e70237, 2026.</p>
+              <div class="pub-actions">
+                <a class="btn btn-ghost btn-sm" href="https://doi.org/10.1002/cae.70237">DOI ↗</a>
+                <button class="btn btn-ghost btn-sm js-only" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-2">BibTeX</button>
               </div>
               <div class="bibtex" id="bib-2" hidden>
                 <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
-                <pre><code>@inproceedings{ilic2026rag,
-  title     = {Efficient Retrieval-Augmented Generation for Low-Resource Languages},
-  author    = {Ilić, Ana and Pavlović, Teodora and Horvat, Dario and Petrović, Marko},
-  booktitle = {Zbornik radova međunarodne konferencije},
-  year      = {2026}
+                <pre><code>@article{milakovic2026game,
+  title   = {A Game-Based Learning Approach to Artificial Intelligence Topics},
+  author  = {Milaković, Adrian and Jocović, Vladimir and Drašković, Dražen and Nikolić, Boško},
+  journal = {Computer Applications in Engineering Education},
+  volume  = {34},
+  number  = {4},
+  pages   = {e70237},
+  year    = {2026},
+  doi     = {10.1002/cae.70237}
 }</code></pre>
               </div>
             </li>
-            <li class="pub" data-type="preprint">
-              <span class="badge badge-preprint">Preprint</span>
-              <h3 class="pub-title">A Benchmark for Evaluating Large Language Models in Serbian</h3>
-              <p class="pub-authors"><strong>T. Pavlović</strong>, <strong>L. Đorđević</strong>, <strong>M. Petrović</strong></p>
-              <p class="pub-venue"><em>arXiv preprint</em>, 2026.</p>
-              <div class="pub-actions js-only">
-                <button class="btn btn-ghost btn-sm" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-3">BibTeX</button>
+            <li class="pub" data-type="konferencija nlp">
+              <div class="pub-badges"><span class="badge badge-outline">Konferencija</span><span class="badge violet">Jezički modeli</span></div>
+              <h3 class="pub-title">A Two-Stage Few-Shot Framework for Hate Speech Detection and Categorization in Emoji-Containing Text</h3>
+              <p class="pub-authors"><strong>J. Tufegdžić</strong>, <strong>M. Dodović</strong>, <strong>D. Drašković</strong></p>
+              <p class="pub-venue"><em>13th International Conference on Electrical, Electronic and Computing Engineering (IcETRAN)</em>, IEEE, str. 1–6, 2026.</p>
+              <div class="pub-actions">
+                <a class="btn btn-ghost btn-sm" href="https://doi.org/10.1109/icetran71739.2026.11727828">DOI ↗</a>
+                <button class="btn btn-ghost btn-sm js-only" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-3">BibTeX</button>
               </div>
               <div class="bibtex" id="bib-3" hidden>
                 <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
-                <pre><code>@misc{pavlovic2026benchmark,
-  title  = {A Benchmark for Evaluating Large Language Models in Serbian},
-  author = {Pavlović, Teodora and Đorđević, Luka and Petrović, Marko},
-  note   = {arXiv preprint},
-  year   = {2026}
+                <pre><code>@inproceedings{tufegdzic2026fewshot,
+  title     = {A Two-Stage Few-Shot Framework for Hate Speech Detection and Categorization in Emoji-Containing Text},
+  author    = {Tufegdžić, Janko and Dodović, Matija and Drašković, Dražen},
+  booktitle = {2026 13th International Conference on Electrical, Electronic and Computing Engineering (IcETRAN)},
+  pages     = {1--6},
+  year      = {2026},
+  publisher = {IEEE},
+  doi       = {10.1109/icetran71739.2026.11727828}
+}</code></pre>
+              </div>
+            </li>
+            <li class="pub" data-type="casopis nlp">
+              <div class="pub-badges"><span class="badge badge-outline">Časopis</span><span class="badge violet">Jezički modeli</span></div>
+              <h3 class="pub-title">A Comparative Analysis of Large Language Models for the Detection and Classification of Hate Speech in a Low-Resource Language</h3>
+              <p class="pub-authors"><strong>M. Dodović</strong>, <strong>J. Tufegdžić</strong>, <strong>D. Drašković</strong></p>
+              <p class="pub-venue"><em>IEEE Access</em>, vol. 14, str. 132642–132667, 2026.</p>
+              <div class="pub-actions">
+                <a class="btn btn-ghost btn-sm" href="https://doi.org/10.1109/access.2026.3726865">DOI ↗</a>
+                <button class="btn btn-ghost btn-sm js-only" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-4">BibTeX</button>
+              </div>
+              <div class="bibtex" id="bib-4" hidden>
+                <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
+                <pre><code>@article{dodovic2026hate,
+  title   = {A Comparative Analysis of Large Language Models for the Detection and Classification of Hate Speech in a Low-Resource Language},
+  author  = {Dodović, Matija and Tufegdžić, Janko and Drašković, Dražen},
+  journal = {IEEE Access},
+  volume  = {14},
+  pages   = {132642--132667},
+  year    = {2026},
+  doi     = {10.1109/access.2026.3726865}
+}</code></pre>
+              </div>
+            </li>
+            <li class="pub" data-type="casopis medicina">
+              <div class="pub-badges"><span class="badge badge-outline">Časopis</span><span class="badge pink">Medicina</span></div>
+              <h3 class="pub-title">Parkinson’s Disease Detection Using Machine Learning Algorithms: A Comprehensive Review</h3>
+              <p class="pub-authors">J. Cincović, <strong>M. Cvetanović</strong>, M. Djurić-Jovičić, N. Bačanin, <strong>B. Nikolić</strong></p>
+              <p class="pub-venue"><em>Algorithms</em>, vol. 19, br. 3, art. 193, 2026.</p>
+              <div class="pub-actions">
+                <a class="btn btn-ghost btn-sm" href="https://doi.org/10.3390/a19030193">DOI ↗</a>
+                <button class="btn btn-ghost btn-sm js-only" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-5">BibTeX</button>
+              </div>
+              <div class="bibtex" id="bib-5" hidden>
+                <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
+                <pre><code>@article{cincovic2026parkinson,
+  title   = {Parkinson's Disease Detection Using Machine Learning Algorithms: A Comprehensive Review},
+  author  = {Cincović, Jelica and Cvetanović, Miloš and Djurić-Jovičić, Milica and Bačanin, Nebojša and Nikolić, Boško},
+  journal = {Algorithms},
+  volume  = {19},
+  number  = {3},
+  pages   = {193},
+  year    = {2026},
+  doi     = {10.3390/a19030193}
+}</code></pre>
+              </div>
+            </li>
+            <li class="pub" data-type="konferencija nlp obrazovanje">
+              <div class="pub-badges"><span class="badge badge-outline">Konferencija</span><span class="badge violet">Jezički modeli</span><span class="badge amber">Obrazovanje</span></div>
+              <h3 class="pub-title">From Documents to Answers: A University-Focused DBQA System with LLMs</h3>
+              <p class="pub-authors"><strong>M. Dodović</strong>, <strong>J. Tufegdžić</strong>, L. Hrvačević, <strong>D. Drašković</strong></p>
+              <p class="pub-venue"><em>Transformative Technologies Shaping a Smarter Society</em>, Lecture Notes in Networks and Systems, Springer, str. 333–343, 2026.</p>
+              <div class="pub-actions">
+                <a class="btn btn-ghost btn-sm" href="https://doi.org/10.1007/978-3-032-04890-5_25">DOI ↗</a>
+                <button class="btn btn-ghost btn-sm js-only" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-6">BibTeX</button>
+              </div>
+              <div class="bibtex" id="bib-6" hidden>
+                <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
+                <pre><code>@inproceedings{dodovic2026dbqa,
+  title     = {From Documents to Answers: A University-Focused {DBQA} System with {LLMs}},
+  author    = {Dodović, Matija and Tufegdžić, Janko and Hrvačević, Luka and Drašković, Dražen},
+  booktitle = {Transformative Technologies Shaping a Smarter Society},
+  series    = {Lecture Notes in Networks and Systems},
+  pages     = {333--343},
+  year      = {2026},
+  publisher = {Springer},
+  doi       = {10.1007/978-3-032-04890-5_25}
 }</code></pre>
               </div>
             </li>
@@ -177,59 +257,48 @@
         <section class="pub-year" aria-labelledby="g2025">
           <h2 id="g2025">2025</h2>
           <ol class="pub-list">
-            <li class="pub" data-type="journal">
-              <span class="badge">Časopis</span>
-              <h3 class="pub-title">Diffusion Models for Synthetic Data Generation in Precision Agriculture</h3>
-              <p class="pub-authors"><strong>S. Jovanović</strong>, <strong>M. Stojanović</strong>, <strong>M. Petrović</strong></p>
-              <p class="pub-venue"><em>Naziv časopisa</em>, vol. 11, br. 4, 2025.</p>
-              <div class="pub-actions js-only">
-                <button class="btn btn-ghost btn-sm" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-4">BibTeX</button>
+            <li class="pub" data-type="konferencija vid">
+              <div class="pub-badges"><span class="badge badge-outline">Konferencija</span><span class="badge">Računarski vid</span></div>
+              <h3 class="pub-title">Web Application for Predicting Image Memorability Using a Machine Learning Model</h3>
+              <p class="pub-authors">V. Matvejev, <strong>D. Drašković</strong>, <strong>B. Nikolić</strong>, D. Bojić</p>
+              <p class="pub-venue"><em>33rd Telecommunications Forum (TELFOR)</em>, Beograd, IEEE, str. 1–4, 2025.</p>
+              <div class="pub-actions">
+                <a class="btn btn-ghost btn-sm" href="https://doi.org/10.1109/telfor67910.2025.11314318">DOI ↗</a>
+                <button class="btn btn-ghost btn-sm js-only" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-7">BibTeX</button>
               </div>
-              <div class="bibtex" id="bib-4" hidden>
+              <div class="bibtex" id="bib-7" hidden>
                 <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
-                <pre><code>@article{jovanovic2025diffusion,
-  title   = {Diffusion Models for Synthetic Data Generation in Precision Agriculture},
-  author  = {Jovanović, Stefan and Stojanović, Milica and Petrović, Marko},
-  journal = {Naziv časopisa},
-  volume  = {11},
-  number  = {4},
-  year    = {2025}
+                <pre><code>@inproceedings{matvejev2025memorability,
+  title     = {Web Application for Predicting Image Memorability Using a Machine Learning Model},
+  author    = {Matvejev, Valerijan and Drašković, Dražen and Nikolić, Boško and Bojić, Dragan},
+  booktitle = {2025 33rd Telecommunications Forum (TELFOR)},
+  pages     = {1--4},
+  year      = {2025},
+  publisher = {IEEE},
+  doi       = {10.1109/telfor67910.2025.11314318}
 }</code></pre>
               </div>
             </li>
-            <li class="pub" data-type="conference">
-              <span class="badge badge-conference">Konferencija</span>
-              <h3 class="pub-title">Explainable Deep Reinforcement Learning for Robotic Manipulation</h3>
-              <p class="pub-authors"><strong>N. Marković</strong>, <strong>L. Đorđević</strong>, P. Weber</p>
-              <p class="pub-venue"><em>Zbornik radova konferencije o robotici</em>, 2025.</p>
-              <div class="pub-actions js-only">
-                <button class="btn btn-ghost btn-sm" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-5">BibTeX</button>
+            <li class="pub" data-type="konferencija nlp">
+              <div class="pub-badges"><span class="badge badge-outline">Konferencija</span><span class="badge violet">Jezički modeli</span></div>
+              <h3 class="pub-title">Data Analysis Techniques and Detection of Propaganda in Serbian Online Media in 2023</h3>
+              <p class="pub-authors"><strong>D. Drašković</strong>, M. Ogrizović, <strong>M. Dodović</strong>, M. Obradović</p>
+              <p class="pub-venue"><em>Applied Artificial Intelligence 4</em>, Lecture Notes in Networks and Systems, Springer, str. 115–123, 2025.</p>
+              <div class="pub-actions">
+                <a class="btn btn-ghost btn-sm" href="https://doi.org/10.1007/978-3-031-99201-8_12">DOI ↗</a>
+                <button class="btn btn-ghost btn-sm js-only" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-8">BibTeX</button>
               </div>
-              <div class="bibtex" id="bib-5" hidden>
+              <div class="bibtex" id="bib-8" hidden>
                 <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
-                <pre><code>@inproceedings{markovic2025xrl,
-  title     = {Explainable Deep Reinforcement Learning for Robotic Manipulation},
-  author    = {Marković, Nikola and Đorđević, Luka and Weber, Paul},
-  booktitle = {Zbornik radova konferencije o robotici},
-  year      = {2025}
-}</code></pre>
-              </div>
-            </li>
-            <li class="pub" data-type="thesis">
-              <span class="badge badge-thesis">Teza</span>
-              <h3 class="pub-title">Primena dubokog učenja u analizi medicinskih vremenskih serija</h3>
-              <p class="pub-authors"><strong>A. Ilić</strong></p>
-              <p class="pub-venue">Master rad, 2025.</p>
-              <div class="pub-actions js-only">
-                <button class="btn btn-ghost btn-sm" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-6">BibTeX</button>
-              </div>
-              <div class="bibtex" id="bib-6" hidden>
-                <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
-                <pre><code>@mastersthesis{ilic2025master,
-  title  = {Primena dubokog učenja u analizi medicinskih vremenskih serija},
-  author = {Ilić, Ana},
-  school = {Naziv fakulteta},
-  year   = {2025}
+                <pre><code>@inproceedings{draskovic2025propaganda,
+  title     = {Data Analysis Techniques and Detection of Propaganda in Serbian Online Media in 2023},
+  author    = {Drašković, Dražen and Ogrizović, Mihajlo and Dodović, Matija and Obradović, Miloš},
+  booktitle = {Applied Artificial Intelligence 4: Medicine, Biology, Chemistry, Financial, Games, Engineering},
+  series    = {Lecture Notes in Networks and Systems},
+  pages     = {115--123},
+  year      = {2025},
+  publisher = {Springer},
+  doi       = {10.1007/978-3-031-99201-8_12}
 }</code></pre>
               </div>
             </li>
@@ -240,91 +309,32 @@
         <section class="pub-year" aria-labelledby="g2024">
           <h2 id="g2024">2024</h2>
           <ol class="pub-list">
-            <li class="pub" data-type="journal">
-              <span class="badge">Časopis</span>
-              <h3 class="pub-title">Uncertainty-Aware Neural Networks for Clinical Decision Support</h3>
-              <p class="pub-authors"><strong>J. Nikolić</strong>, <strong>M. Petrović</strong></p>
-              <p class="pub-venue"><em>Naziv časopisa</em>, vol. 9, 2024.</p>
-              <div class="pub-actions js-only">
-                <button class="btn btn-ghost btn-sm" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-7">BibTeX</button>
-              </div>
-              <div class="bibtex" id="bib-7" hidden>
-                <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
-                <pre><code>@article{nikolic2024uncertainty,
-  title   = {Uncertainty-Aware Neural Networks for Clinical Decision Support},
-  author  = {Nikolić, Jelena and Petrović, Marko},
-  journal = {Naziv časopisa},
-  volume  = {9},
-  year    = {2024}
-}</code></pre>
-              </div>
-            </li>
-            <li class="pub" data-type="conference">
-              <span class="badge badge-conference">Konferencija</span>
-              <h3 class="pub-title">Lightweight Object Detection on Edge Devices for Field Robotics</h3>
-              <p class="pub-authors"><strong>M. Stojanović</strong>, <strong>N. Marković</strong>, <strong>S. Jovanović</strong></p>
-              <p class="pub-venue"><em>Zbornik radova konferencije</em>, 2024.</p>
-              <div class="pub-actions js-only">
-                <button class="btn btn-ghost btn-sm" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-8">BibTeX</button>
-              </div>
-              <div class="bibtex" id="bib-8" hidden>
-                <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
-                <pre><code>@inproceedings{stojanovic2024edge,
-  title     = {Lightweight Object Detection on Edge Devices for Field Robotics},
-  author    = {Stojanović, Milica and Marković, Nikola and Jovanović, Stefan},
-  booktitle = {Zbornik radova konferencije},
-  year      = {2024}
-}</code></pre>
-              </div>
-            </li>
-          </ol>
-        </section>
-
-        <!-- ===== 2023 ===== -->
-        <section class="pub-year" aria-labelledby="g2023">
-          <h2 id="g2023">2023</h2>
-          <ol class="pub-list">
-            <li class="pub" data-type="thesis">
-              <span class="badge badge-thesis">Teza</span>
-              <h3 class="pub-title">Objašnjivi modeli mašinskog učenja za donošenje odluka u kritičnim sistemima</h3>
-              <p class="pub-authors"><strong>I. Kostić</strong></p>
-              <p class="pub-venue">Doktorska disertacija, 2023.</p>
-              <div class="pub-actions js-only">
-                <button class="btn btn-ghost btn-sm" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-9">BibTeX</button>
+            <li class="pub" data-type="konferencija bezbednost">
+              <div class="pub-badges"><span class="badge badge-outline">Konferencija</span><span class="badge green">Bezbednost</span></div>
+              <h3 class="pub-title">Analysis of Network Attack Classification Success and Extraction of the Most Important Features</h3>
+              <p class="pub-authors">M. Nastić, <strong>Z. Radivojević</strong>, <strong>D. Drašković</strong></p>
+              <p class="pub-venue"><em>32nd Telecommunications Forum (TELFOR)</em>, Beograd, IEEE, str. 1–4, 2024.</p>
+              <div class="pub-actions">
+                <a class="btn btn-ghost btn-sm" href="https://doi.org/10.1109/telfor63250.2024.10819062">DOI ↗</a>
+                <button class="btn btn-ghost btn-sm js-only" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-9">BibTeX</button>
               </div>
               <div class="bibtex" id="bib-9" hidden>
                 <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
-                <pre><code>@phdthesis{kostic2023xai,
-  title  = {Objašnjivi modeli mašinskog učenja za donošenje odluka u kritičnim sistemima},
-  author = {Kostić, Ivana},
-  school = {Naziv fakulteta},
-  year   = {2023}
-}</code></pre>
-              </div>
-            </li>
-            <li class="pub" data-type="journal">
-              <span class="badge">Časopis</span>
-              <h3 class="pub-title">Fairness Constraints in Deep Learning Models for High-Stakes Decisions</h3>
-              <p class="pub-authors"><strong>M. Petrović</strong>, <strong>I. Kostić</strong>, R. Fischer</p>
-              <p class="pub-venue"><em>Naziv časopisa</em>, vol. 7, 2023.</p>
-              <div class="pub-actions js-only">
-                <button class="btn btn-ghost btn-sm" type="button" data-bibtex-toggle aria-expanded="false" aria-controls="bib-10">BibTeX</button>
-              </div>
-              <div class="bibtex" id="bib-10" hidden>
-                <button class="btn btn-ghost btn-sm copy-btn" type="button" data-copy>Kopiraj</button>
-                <pre><code>@article{petrovic2023fairness,
-  title   = {Fairness Constraints in Deep Learning Models for High-Stakes Decisions},
-  author  = {Petrović, Marko and Kostić, Ivana and Fischer, Ralf},
-  journal = {Naziv časopisa},
-  volume  = {7},
-  year    = {2023}
+                <pre><code>@inproceedings{nastic2024attacks,
+  title     = {Analysis of Network Attack Classification Success and Extraction of the Most Important Features},
+  author    = {Nastić, Miloš and Radivojević, Zaharije and Drašković, Dražen},
+  booktitle = {2024 32nd Telecommunications Forum (TELFOR)},
+  pages     = {1--4},
+  year      = {2024},
+  publisher = {IEEE},
+  doi       = {10.1109/telfor63250.2024.10819062}
 }</code></pre>
               </div>
             </li>
           </ol>
         </section>
 
-        <p class="pub-empty" data-pub-empty hidden>Nijedna publikacija ne odgovara pretrazi. Pokušajte sa drugim pojmom ili filterom.</p>
+        <p class="pub-empty" data-pub-empty hidden>Nijedan rad ne odgovara pretrazi. Pokušajte sa drugim pojmom ili filterom.</p>
       </div>
     </section>
   </main>

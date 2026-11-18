@@ -1855,3 +1855,10 @@ html:not(.js) .hero-visual::before {
 .pipeline-grid > *,
 .split > * { min-width: 0; }
 @media (max-width: 960px) { .hero-visual { margin-top: 28px; } }
+
+/* Više tematskih oznaka na jednoj publikaciji */
+.pub-badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.pub-mini .pub-title a { color: var(--text-strong); }
+.pub-mini .pub-title a:hover { color: var(--primary); }
+/* Neutralna oznaka tipa rada (Časopis / Konferencija) */
+.badge-outline { background: transparent; border-color: var(--border); color: var(--text-muted); }

@@ -769,10 +769,14 @@
       var parts = $$('.pub-title, .pub-authors, .pub-venue', p).map(function (el) { return el.textContent; });
       p._search = normalize(parts.join(' '));
     });
+    // data-type može da sadrži više tema odvojenih razmakom, npr. "vid medicina"
+    var hasType = function (p, type) {
+      return type === 'all' || (' ' + (p.getAttribute('data-type') || '') + ' ').indexOf(' ' + type + ' ') !== -1;
+    };
     if (totalEl) totalEl.textContent = String(pubs.length);
     chips.forEach(function (chip) {
       var type = chip.getAttribute('data-pub-filter');
-      var n = type === 'all' ? pubs.length : pubs.filter(function (p) { return p.getAttribute('data-type') === type; }).length;
+      var n = pubs.filter(function (p) { return hasType(p, type); }).length;
       var badge = $('.chip-count', chip);
       if (badge) badge.textContent = String(n);
     });
@@ -781,7 +785,7 @@
       var q = normalize(search ? search.value.trim() : '');
       var shown = 0;
       pubs.forEach(function (p) {
-        var ok = (activeType === 'all' || p.getAttribute('data-type') === activeType) && (!q || p._search.indexOf(q) !== -1);
+        var ok = hasType(p, activeType) && (!q || p._search.indexOf(q) !== -1);
         p.hidden = !ok;
         if (ok) shown++;
       });
